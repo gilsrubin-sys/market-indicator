@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Helen's Indicator</title>
-<meta name="description" content="Helen's Indicator: market breadth overbought/oversold gauge. A product of Grok Bot.">
+<title>Market Indicator</title>
+<meta name="description" content="Market Indicator: market breadth overbought/oversold gauge. A product of Grok Bot.">
 <meta name="theme-color" content="#0f1115">
 <style>
 :root{--bg:#0f1115;--card:#171a21;--line:#262b35;--txt:#e8eaee;--mut:#8b93a3;--os:#e0662c;--osf:#3a2219;--ob:#1fb58f;--obf:#15332b;--ne:#9aa1ad;--nef:#2a2e36;--grey:#2b303a}
@@ -48,7 +48,7 @@ svg text{font-family:inherit}
 <body>
 <div class="wrap">
 <header>
-  <h1>Helen's Indicator</h1>
+  <h1>Market Indicator</h1>
   <div class="by">A product of Grok Bot</div>
   <div class="stamp" id="stamp">Loading…</div>
 </header>
@@ -77,7 +77,7 @@ svg text{font-family:inherit}
   <div class="legend"><span><i style="background:#fff"></i>Composite</span><span><i style="background:#e0662c"></i>Short-term</span><span><i style="background:#4f9cf0"></i>Medium-term</span><span><i style="background:#7c8494"></i>S&amp;P 500 (right scale, dashed)</span></div>
 </div>
 <div class="note" id="note">
-  <b>Note:</b> Helen's Indicator is a replication of Helene Meisler's breadth overbought/oversold method (her published thresholds for the
+  <b>Note:</b> Market Indicator is a replication of Helene Meisler's breadth overbought/oversold method (her published thresholds for the
   NYSE and Nasdaq oscillators, Nasdaq Momentum, 30-day A-D, Summation "net needed", Volume Indicator and Hi-Lo Indicator) mapped onto a 0–100 scale.
   It is <b>not</b> a number she publishes. Short-term = 10-day NYSE Oscillator + Nasdaq Momentum; Medium-term = 30-day A-D, net-needed, Volume Indicator, Hi-Lo.
   Rows marked "context" are shown for reference and are not in the score. Zones: 0–20 Extreme Oversold · 20–40 Oversold · 40–60 Neutral · 60–80 Overbought · 80–100 Extreme Overbought.
