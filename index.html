@@ -148,7 +148,7 @@ function render(d){D=d;
   document.getElementById('stamp').innerHTML=`As of <b>${esc(d.as_of_label)} close</b> · last updated <b>${esc(d.generated_label)}</b>`;
   const c=d.composite;gauge(document.getElementById('gauge'),c.score,false);
   const X=d.recommended_exposure;if(X){const b=document.getElementById('expo');b.style.display='';b.className='expo'+(X.exposure>1?' lev':(X.exposure<1?' cash':''));
-    document.getElementById('expov').textContent=X.label;document.getElementById('expor').textContent=X.state+': '+X.reason+' (as of '+X.as_of+' close; act next session)';
+    document.getElementById('expov').textContent=X.label;document.getElementById('expor').textContent=X.reason+' (as of '+X.as_of+' close; act next session)';
     document.getElementById('expog').textContent=X.guard?('Guard active: '+X.guard):'';
     document.getElementById('expol').innerHTML=X.ladder.map(r=>'<tr><td>'+esc(r.state)+'</td><td><b>'+esc(r.label)+'</b></td><td class="desc">'+esc(r.reason)+'</td></tr>').join('');
     document.getElementById('exporules').textContent=X.rules;document.getElementById('expod').textContent=X.disclaimer;}
