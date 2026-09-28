@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-28T14:51:10-04:00",
+  "generated_at": "2026-09-28T14:51:28-04:00",
   "run_stamp": "20260928_1451",
   "pull_stamp": "20260928_1447",
   "pull_finished_at": "2026-09-28T14:47:37-04:00"
  },
  "market_session_date": "2026-09-25",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-28T14:51:10-04:00",
+  "evaluated_at": "2026-09-28T14:51:28-04:00",
   "last_completed_session": "2026-09-25",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "before 16:30 ET: today's session is not complete",
@@ -1477,7 +1477,7 @@
  },
  "dsi": {
   "status": "current",
-  "summary": "DSI: S&P 500 DSI 58 (Sep 25, quoted by Meisler); Nasdaq DSI 75 (Sep 25, quoted by Meisler)",
+  "summary": "DSI: S&P 500 DSI 58 (Sep 25, trade-futures.com); Nasdaq DSI 75 (Sep 25, trade-futures.com)",
   "markets": {
    "S&P 500": {
     "current": true,
