@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-28T14:47:44-04:00",
-  "run_stamp": "20260928_1447",
+  "generated_at": "2026-09-28T14:51:10-04:00",
+  "run_stamp": "20260928_1451",
   "pull_stamp": "20260928_1447",
   "pull_finished_at": "2026-09-28T14:47:37-04:00"
  },
  "market_session_date": "2026-09-25",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-28T14:47:44-04:00",
+  "evaluated_at": "2026-09-28T14:51:10-04:00",
   "last_completed_session": "2026-09-25",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "before 16:30 ET: today's session is not complete",
@@ -124,7 +124,7 @@
   {
    "input": "Daily Sentiment Index (display only)",
    "url": "https://www.trade-futures.com/dailyindex.php (paid) -> only Meisler-quoted values in dsi_manual.csv",
-   "fetched_at": "2026-09-28T14:40:06-04:00",
+   "fetched_at": "2026-09-28T14:51:09-04:00",
    "file": "dsi_manual.csv"
   }
  ],
@@ -1476,24 +1476,24 @@
   "fear": false
  },
  "dsi": {
-  "status": "not available (paid source)",
-  "summary": "DSI: not available (paid source). S&P 500: last quoted 79 on Aug 13, 2026 (Meisler column); Nasdaq: no quoted value on file.",
+  "status": "current",
+  "summary": "DSI: S&P 500 DSI 58 (Sep 25, quoted by Meisler); Nasdaq DSI 75 (Sep 25, quoted by Meisler)",
   "markets": {
    "S&P 500": {
-    "current": false,
-    "last_value": 79.0,
-    "last_date": "2026-08-13",
-    "age_days": 43,
-    "source": "meisler_column",
-    "note": "Meisler 8/13 PM (TheStreet Pro, 'Market Shifts as Retail Investors Jump the Fence', 9b586e52d4): 'the DSI for the S&P is at 79'; repeated 8/14 AM (1f4bb2561a): 'the Daily Sentiment Indicator (DSI) for the S&P is at 79' (85 = yellow flashing light, over 90 = red). Session date inferred = Aug 13 close."
+    "current": true,
+    "last_value": 58.0,
+    "last_date": "2026-09-25",
+    "age_days": 0,
+    "source": "gil_screenshot",
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28"
    },
    "Nasdaq": {
-    "current": false,
-    "last_value": null,
-    "last_date": null,
-    "age_days": null,
-    "source": null,
-    "note": "no quoted value on file"
+    "current": true,
+    "last_value": 75.0,
+    "last_date": "2026-09-25",
+    "age_days": 0,
+    "source": "gil_screenshot",
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28"
    }
   },
   "display_only": true,
@@ -1513,11 +1513,6 @@
   {
    "flag": "naaim_from_column_quote",
    "detail": "NAAIM 71.9 taken from a Meisler column quote (approximate)",
-   "severity": "info"
-  },
-  {
-   "flag": "dsi_not_available",
-   "detail": "DSI: not available (paid source). S&P 500: last quoted 79 on Aug 13, 2026 (Meisler column); Nasdaq: no quoted value on file.",
    "severity": "info"
   }
  ],
