@@ -3,17 +3,17 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-29T09:05:51-04:00",
-  "run_stamp": "20260929_0905",
-  "pull_stamp": "20260929_0857",
-  "pull_finished_at": "2026-09-29T08:57:19-04:00"
+  "generated_at": "2026-09-29T16:48:12-04:00",
+  "run_stamp": "20260929_1648",
+  "pull_stamp": "20260929_1647",
+  "pull_finished_at": "2026-09-29T16:48:05-04:00"
  },
  "market_session_date": "2026-09-28",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-29T09:05:51-04:00",
-  "last_completed_session": "2026-09-28",
+  "evaluated_at": "2026-09-29T16:48:12-04:00",
+  "last_completed_session": "2026-09-29",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
-  "reason": "before 16:30 ET: today's session is not complete",
+  "reason": "today is complete (after 16:30 ET)",
   "as_of_ok": true
  },
  "weights": {
@@ -70,55 +70,55 @@
   {
    "input": "NYSE + Nasdaq breadth (adv/dec/unch, up/down volume, new highs/lows): Barron's Market Lab (primary, weekly final)",
    "url": "https://www.barrons.com/market-data/market-lab?date=<Saturday>",
-   "fetched_at": "2026-09-29T08:57:18-04:00",
+   "fetched_at": "2026-09-29T16:48:03-04:00",
    "file": "barrons/parsed.json"
   },
   {
    "input": "NYSE + Nasdaq breadth, latest + previous close: WSJ Markets Diary JSON (fills sessions Barron's has not published yet)",
    "url": "https://www.wsj.com/market-data/stocks/marketsdiary?id=%7B%22application%22%3A%22WSJ%22%2C%22marketsDiaryType%22%3A%22diaries%22%7D&type=mdc_marketsdiary",
-   "fetched_at": "2026-09-29T08:57:08-04:00",
+   "fetched_at": "2026-09-29T16:47:54-04:00",
    "http": "200",
-   "file": "raw/wsj_diaries_20260929_0857.json"
+   "file": "raw/wsj_diaries_20260929_1647.json"
   },
   {
    "input": "NYSE adv/dec/volume, McClellan Oscillator/Summation: McClellan OSC-DATA.xls (gap fill + Summation level alignment)",
    "url": "https://www.mcoscillator.com/data/osc_data/OSC-DATA.xls",
-   "fetched_at": "2026-09-29T08:57:08-04:00",
+   "fetched_at": "2026-09-29T16:47:54-04:00",
    "http": "200",
    "file": "OSC-DATA.xls"
   },
   {
    "input": "Cboe total/equity/index put/call ratios (daily)",
    "url": "https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-09-28_daily_options",
-   "fetched_at": "2026-09-29T08:57:09-04:00",
+   "fetched_at": "2026-09-29T16:47:55-04:00",
    "file": "pc/2026-09-28.json"
   },
   {
    "input": "Nasdaq Composite closes (Nasdaq Momentum)",
    "url": "https://api.nasdaq.com/api/quote/COMP/historical?assetclass=index",
-   "fetched_at": "2026-09-29T08:57:13-04:00",
+   "fetched_at": "2026-09-29T16:47:57-04:00",
    "http": "200",
    "file": "nq_COMP.json"
   },
   {
    "input": "S&P 500 / VIX / Russell 2000 closes (context, exposure guards)",
    "url": "https://cdn.cboe.com/api/global/delayed_quotes/charts/historical/_SPX.json",
-   "fetched_at": "2026-09-29T08:57:14-04:00",
+   "fetched_at": "2026-09-29T16:48:00-04:00",
    "http": "200",
    "file": "cq_SPX.json"
   },
   {
    "input": "NAAIM Exposure Index (weekly; gate tiebreak only)",
    "url": "https://index.naaim.org/embeddable/table (free table, 3-month delayed) + readings quoted in Meisler columns (naaim_manual.csv)",
-   "fetched_at": "2026-09-29T09:05:49-04:00",
-   "status": "NAAIM: 131 rows fetched, latest official survey 2026-06-24; naaim.csv 134 rows, latest 2026-09-16 (meisler_column)",
+   "fetched_at": "2026-09-29T16:48:04-04:00",
+   "status": "NAAIM: 131 rows fetched, latest official survey 2026-06-24; naaim.csv 135 rows, latest 2026-09-23 (gil_screenshot)",
    "file": "naaim.csv"
   },
   {
    "input": "ICE BofA MOVE Index (scored, composite 10%)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EMOVE (Yahoo Finance ^MOVE); cross-check https://quote.cnbc.com (.MOVE)",
-   "fetched_at": "2026-09-29T08:57:19-04:00",
-   "status": "MOVE: yahoo ok: 273 closes, 0 new, latest 2026-09-28; cnbc cross-check 2026-09-28 101.82 ok",
+   "fetched_at": "2026-09-29T16:48:05-04:00",
+   "status": "MOVE: yahoo ok: 274 closes, 1 new, latest 2026-09-29; cnbc cross-check 2026-09-29 106.6 ok",
    "file": "move_daily.csv"
   },
   {
@@ -1505,6 +1505,11 @@
   "bands": "her words: 85 = 'yellow flashing light', over 90 = 'red flashing light'; ~10 = extreme pessimism (contrary buy)"
  },
  "quality_flags": [
+  {
+   "flag": "as_of_behind_last_completed_session",
+   "detail": "data as of 2026-09-28; last completed session 2026-09-29 (source not updated yet)",
+   "severity": "warn"
+  },
   {
    "flag": "preliminary_breadth",
    "session": "2026-09-28",
