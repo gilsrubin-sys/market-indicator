@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-29T08:57:29-04:00",
-  "run_stamp": "20260929_0857",
+  "generated_at": "2026-09-29T09:05:51-04:00",
+  "run_stamp": "20260929_0905",
   "pull_stamp": "20260929_0857",
   "pull_finished_at": "2026-09-29T08:57:19-04:00"
  },
  "market_session_date": "2026-09-28",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-29T08:57:29-04:00",
+  "evaluated_at": "2026-09-29T09:05:51-04:00",
   "last_completed_session": "2026-09-28",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "before 16:30 ET: today's session is not complete",
@@ -110,7 +110,7 @@
   {
    "input": "NAAIM Exposure Index (weekly; gate tiebreak only)",
    "url": "https://index.naaim.org/embeddable/table (free table, 3-month delayed) + readings quoted in Meisler columns (naaim_manual.csv)",
-   "fetched_at": "2026-09-29T08:57:18-04:00",
+   "fetched_at": "2026-09-29T09:05:49-04:00",
    "status": "NAAIM: 131 rows fetched, latest official survey 2026-06-24; naaim.csv 134 rows, latest 2026-09-16 (meisler_column)",
    "file": "naaim.csv"
   },
@@ -1406,7 +1406,7 @@
  },
  "good_oversold": {
   "flag": "NO",
-  "headline": "NO: oversold, sentiment shifting (NAAIM dropped 31 pts to 72 from 103) but put/call not at fear (0.82 < 0.97).",
+  "headline": "NO: oversold but complacent.",
   "conditions": {
    "short_term_oversold": true,
    "medium_term_oversold": true,
@@ -1414,7 +1414,7 @@
    "pc_fear": false,
    "naaim_tiebreak": false,
    "naaim_fear": false,
-   "naaim_shift": true
+   "naaim_shift": false
   },
   "inputs": {
    "short_term": 31.8,
@@ -1422,21 +1422,21 @@
    "pc_total_10dma": 0.825,
    "pc_status": "Complacent (low 80s)",
    "naaim": {
-    "date": "2026-09-16",
-    "released": "2026-09-17",
-    "value": 71.9,
-    "source": "meisler_column",
-    "label": "Sentiment shift (major change)",
+    "date": "2026-09-23",
+    "released": "2026-09-24",
+    "value": 88.1,
+    "source": "gil_screenshot",
+    "label": "Neutral",
     "level_label": "Neutral",
-    "shift": true,
-    "drop_from_recent_high": 30.76,
+    "shift": false,
+    "drop_from_recent_high": 14.56,
     "recent_high": 102.66,
-    "prior_week_value": null,
-    "wow_change": null,
-    "prev_value": 102.66,
-    "prev_date": "2026-08-26",
-    "change_vs_prev": -30.76,
-    "age_days": 12,
+    "prior_week_value": 71.9,
+    "wow_change": 16.2,
+    "prev_value": 71.9,
+    "prev_date": "2026-09-16",
+    "change_vs_prev": 16.2,
+    "age_days": 5,
     "stale": false,
     "fear": false
    },
@@ -1457,21 +1457,21 @@
   "guard": null
  },
  "naaim_asof": {
-  "date": "2026-09-16",
-  "released": "2026-09-17",
-  "value": 71.9,
-  "source": "meisler_column",
-  "label": "Sentiment shift (major change)",
+  "date": "2026-09-23",
+  "released": "2026-09-24",
+  "value": 88.1,
+  "source": "gil_screenshot",
+  "label": "Neutral",
   "level_label": "Neutral",
-  "shift": true,
-  "drop_from_recent_high": 30.76,
+  "shift": false,
+  "drop_from_recent_high": 14.56,
   "recent_high": 102.66,
-  "prior_week_value": null,
-  "wow_change": null,
-  "prev_value": 102.66,
-  "prev_date": "2026-08-26",
-  "change_vs_prev": -30.76,
-  "age_days": 12,
+  "prior_week_value": 71.9,
+  "wow_change": 16.2,
+  "prev_value": 71.9,
+  "prev_date": "2026-09-16",
+  "change_vs_prev": 16.2,
+  "age_days": 5,
   "stale": false,
   "fear": false
  },
@@ -1509,16 +1509,6 @@
    "flag": "preliminary_breadth",
    "session": "2026-09-28",
    "detail": "breadth from wsj (WSJ/McClellan fill); Barron's weekly final may revise it",
-   "severity": "info"
-  },
-  {
-   "flag": "naaim_missing_week",
-   "detail": "latest released survey should be 2026-09-23 (Wed, released Thu); newest on file is 2026-09-16 (meisler_column). Free naaim.org table is 3 months delayed; recent weeks exist only if Meisler quotes them.",
-   "severity": "info"
-  },
-  {
-   "flag": "naaim_from_column_quote",
-   "detail": "NAAIM 71.9 taken from a Meisler column quote (approximate)",
    "severity": "info"
   }
  ],
