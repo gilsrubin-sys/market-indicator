@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-28T20:54:50-04:00",
-  "run_stamp": "20260928_2054",
+  "generated_at": "2026-09-28T20:55:13-04:00",
+  "run_stamp": "20260928_2055",
   "pull_stamp": "20260928_2054",
   "pull_finished_at": "2026-09-28T20:54:32-04:00"
  },
  "market_session_date": "2026-09-25",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-28T20:54:50-04:00",
+  "evaluated_at": "2026-09-28T20:55:13-04:00",
   "last_completed_session": "2026-09-28",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "today is complete (after 16:30 ET)",
@@ -1477,23 +1477,23 @@
  },
  "dsi": {
   "status": "current",
-  "summary": "DSI: S&P 500 DSI 58 (Sep 25, trade-futures.com); Nasdaq DSI 75 (Sep 25, trade-futures.com)",
+  "summary": "DSI: S&P 500 DSI 55 (Sep 28, trade-futures.com); Nasdaq DSI 70 (Sep 28, trade-futures.com)",
   "markets": {
    "S&P 500": {
     "current": true,
-    "last_value": 58.0,
-    "last_date": "2026-09-25",
+    "last_value": 55.0,
+    "last_date": "2026-09-28",
     "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28 8:53 PM"
    },
    "Nasdaq": {
     "current": true,
-    "last_value": 75.0,
-    "last_date": "2026-09-25",
+    "last_value": 70.0,
+    "last_date": "2026-09-28",
     "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-28 8:53 PM"
    }
   },
   "display_only": true,
