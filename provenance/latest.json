@@ -3,17 +3,17 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-09-30T09:21:17-04:00",
-  "run_stamp": "20260930_0921",
+  "generated_at": "2026-09-30T16:37:06-04:00",
+  "run_stamp": "20260930_1637",
   "pull_stamp": "20260930_0920",
   "pull_finished_at": "2026-09-30T09:21:05-04:00"
  },
  "market_session_date": "2026-09-29",
  "completed_sessions_check": {
-  "evaluated_at": "2026-09-30T09:21:17-04:00",
-  "last_completed_session": "2026-09-29",
+  "evaluated_at": "2026-09-30T16:37:06-04:00",
+  "last_completed_session": "2026-09-30",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
-  "reason": "before 16:30 ET: today's session is not complete",
+  "reason": "today is complete (after 16:30 ET)",
   "as_of_ok": true
  },
  "weights": {
@@ -124,7 +124,7 @@
   {
    "input": "Daily Sentiment Index (display only)",
    "url": "https://www.trade-futures.com/dailyindex.php (paid) -> only Meisler-quoted values in dsi_manual.csv",
-   "fetched_at": "2026-09-30T01:22:42-04:00",
+   "fetched_at": "2026-09-30T16:37:03-04:00",
    "file": "dsi_manual.csv"
   }
  ],
@@ -1477,23 +1477,23 @@
  },
  "dsi": {
   "status": "current",
-  "summary": "DSI: S&P 500 DSI 55 (Sep 29, trade-futures.com); Nasdaq DSI 72 (Sep 29, trade-futures.com)",
+  "summary": "DSI: S&P 500 DSI 50 (Sep 30, trade-futures.com); Nasdaq DSI 72 (Sep 30, trade-futures.com)",
   "markets": {
    "S&P 500": {
     "current": true,
-    "last_value": 55.0,
-    "last_date": "2026-09-29",
-    "age_days": 1,
+    "last_value": 50.0,
+    "last_date": "2026-09-30",
+    "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-29 8:10 PM; image provenance/dsi_2026-09-29_gil_screenshot.jpg"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-30 4:36 PM; image provenance/dsi_2026-09-30_gil_screenshot.jpg"
    },
    "Nasdaq": {
     "current": true,
     "last_value": 72.0,
-    "last_date": "2026-09-29",
-    "age_days": 1,
+    "last_date": "2026-09-30",
+    "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-29 8:10 PM; image provenance/dsi_2026-09-29_gil_screenshot.jpg"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-09-30 4:36 PM; image provenance/dsi_2026-09-30_gil_screenshot.jpg"
    }
   },
   "display_only": true,
@@ -1505,6 +1505,11 @@
   "bands": "her words: 85 = 'yellow flashing light', over 90 = 'red flashing light'; ~10 = extreme pessimism (contrary buy)"
  },
  "quality_flags": [
+  {
+   "flag": "as_of_behind_last_completed_session",
+   "detail": "data as of 2026-09-29; last completed session 2026-09-30 (source not updated yet)",
+   "severity": "warn"
+  },
   {
    "flag": "preliminary_breadth",
    "session": "2026-09-28",
