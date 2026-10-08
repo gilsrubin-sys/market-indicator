@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-10-07T16:56:54-04:00",
-  "run_stamp": "20261007_1656",
-  "pull_stamp": "20261007_1656",
-  "pull_finished_at": "2026-10-07T16:56:42-04:00"
+  "generated_at": "2026-10-07T20:50:01-04:00",
+  "run_stamp": "20261007_2050",
+  "pull_stamp": "20261007_2049",
+  "pull_finished_at": "2026-10-07T20:49:49-04:00"
  },
  "market_session_date": "2026-10-06",
  "completed_sessions_check": {
-  "evaluated_at": "2026-10-07T16:56:54-04:00",
+  "evaluated_at": "2026-10-07T20:50:01-04:00",
   "last_completed_session": "2026-10-07",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "today is complete (after 16:30 ET)",
@@ -70,55 +70,55 @@
   {
    "input": "NYSE + Nasdaq breadth (adv/dec/unch, up/down volume, new highs/lows): Barron's Market Lab (primary, weekly final)",
    "url": "https://www.barrons.com/market-data/market-lab?date=<Saturday>",
-   "fetched_at": "2026-10-07T16:56:40-04:00",
+   "fetched_at": "2026-10-07T20:49:46-04:00",
    "file": "barrons/parsed.json"
   },
   {
    "input": "NYSE + Nasdaq breadth, latest + previous close: WSJ Markets Diary JSON (fills sessions Barron's has not published yet)",
    "url": "https://www.wsj.com/market-data/stocks/marketsdiary?id=%7B%22application%22%3A%22WSJ%22%2C%22marketsDiaryType%22%3A%22diaries%22%7D&type=mdc_marketsdiary",
-   "fetched_at": "2026-10-07T16:56:27-04:00",
+   "fetched_at": "2026-10-07T20:49:35-04:00",
    "http": "200",
-   "file": "raw/wsj_diaries_20261007_1656.json"
+   "file": "raw/wsj_diaries_20261007_2049.json"
   },
   {
    "input": "NYSE adv/dec/volume, McClellan Oscillator/Summation: McClellan OSC-DATA.xls (gap fill + Summation level alignment)",
    "url": "https://www.mcoscillator.com/data/osc_data/OSC-DATA.xls",
-   "fetched_at": "2026-10-07T16:56:27-04:00",
+   "fetched_at": "2026-10-07T20:49:35-04:00",
    "http": "200",
    "file": "OSC-DATA.xls"
   },
   {
    "input": "Cboe total/equity/index put/call ratios (daily)",
    "url": "https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-10-06_daily_options",
-   "fetched_at": "2026-10-07T16:56:30-04:00",
+   "fetched_at": "2026-10-07T20:49:37-04:00",
    "file": "pc/2026-10-06.json"
   },
   {
    "input": "Nasdaq Composite closes (Nasdaq Momentum)",
    "url": "https://api.nasdaq.com/api/quote/COMP/historical?assetclass=index",
-   "fetched_at": "2026-10-07T16:56:34-04:00",
+   "fetched_at": "2026-10-07T20:49:40-04:00",
    "http": "200",
    "file": "nq_COMP.json"
   },
   {
    "input": "S&P 500 / VIX / Russell 2000 closes (context, exposure guards)",
    "url": "https://cdn.cboe.com/api/global/delayed_quotes/charts/historical/_SPX.json",
-   "fetched_at": "2026-10-07T16:56:37-04:00",
+   "fetched_at": "2026-10-07T20:49:43-04:00",
    "http": "200",
    "file": "cq_SPX.json"
   },
   {
    "input": "NAAIM Exposure Index (weekly; gate tiebreak only)",
    "url": "https://index.naaim.org/embeddable/table (free table, 3-month delayed) + readings quoted in Meisler columns (naaim_manual.csv)",
-   "fetched_at": "2026-10-07T16:56:41-04:00",
+   "fetched_at": "2026-10-07T20:49:47-04:00",
    "status": "NAAIM: 131 rows fetched, latest official survey 2026-07-01; naaim.csv 137 rows, latest 2026-09-30 (gil_screenshot)",
    "file": "naaim.csv"
   },
   {
    "input": "ICE BofA MOVE Index (scored, composite 10%)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EMOVE (Yahoo Finance ^MOVE); cross-check https://quote.cnbc.com (.MOVE)",
-   "fetched_at": "2026-10-07T16:56:42-04:00",
-   "status": "MOVE: yahoo ok: 275 closes, 1 new, latest 2026-10-07; cnbc cross-check 2026-10-07 102.56 ok",
+   "fetched_at": "2026-10-07T20:49:49-04:00",
+   "status": "MOVE: yahoo ok: 274 closes, 0 new, latest 2026-10-07; cnbc cross-check 2026-10-07 102.56 ok",
    "file": "move_daily.csv"
   },
   {
