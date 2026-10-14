@@ -3,14 +3,14 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-10-14T16:48:54-04:00",
-  "run_stamp": "20261014_1648",
+  "generated_at": "2026-10-14T17:54:27-04:00",
+  "run_stamp": "20261014_1754",
   "pull_stamp": "20261014_1648",
   "pull_finished_at": "2026-10-14T16:48:47-04:00"
  },
  "market_session_date": "2026-10-13",
  "completed_sessions_check": {
-  "evaluated_at": "2026-10-14T16:48:54-04:00",
+  "evaluated_at": "2026-10-14T17:54:27-04:00",
   "last_completed_session": "2026-10-14",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
   "reason": "today is complete (after 16:30 ET)",
@@ -124,7 +124,7 @@
   {
    "input": "Daily Sentiment Index (display only)",
    "url": "https://www.trade-futures.com/dailyindex.php (paid) -> only Meisler-quoted values in dsi_manual.csv",
-   "fetched_at": "2026-10-13T21:51:26-04:00",
+   "fetched_at": "2026-10-14T17:54:23-04:00",
    "file": "dsi_manual.csv"
   }
  ],
@@ -1476,24 +1476,24 @@
   "fear": false
  },
  "dsi": {
-  "status": "not available (paid source)",
-  "summary": "DSI: not available (paid source). S&P 500: last quoted 63 on Oct 7, 2026 (Meisler column); Nasdaq: last quoted 83 on Oct 7, 2026 (Meisler column).",
+  "status": "current",
+  "summary": "DSI: S&P 500 DSI 58 (Oct 14, trade-futures.com); Nasdaq DSI 63 (Oct 14, trade-futures.com)",
   "markets": {
    "S&P 500": {
-    "current": false,
-    "last_value": 63.0,
-    "last_date": "2026-10-07",
-    "age_days": 7,
+    "current": true,
+    "last_value": 58.0,
+    "last_date": "2026-10-14",
+    "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-07 8:52 PM; image provenance/dsi_2026-10-07_gil_screenshot.jpg"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-14 5:54 PM; image provenance/dsi_2026-10-14_gil_screenshot.jpg"
    },
    "Nasdaq": {
-    "current": false,
-    "last_value": 83.0,
-    "last_date": "2026-10-07",
-    "age_days": 7,
+    "current": true,
+    "last_value": 63.0,
+    "last_date": "2026-10-14",
+    "age_days": 0,
     "source": "gil_screenshot",
-    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-07 8:52 PM; image provenance/dsi_2026-10-07_gil_screenshot.jpg"
+    "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-14 5:54 PM; image provenance/dsi_2026-10-14_gil_screenshot.jpg"
    }
   },
   "display_only": true,
@@ -1525,11 +1525,6 @@
   {
    "flag": "naaim_missing_week",
    "detail": "latest released survey should be 2026-10-07 (Wed, released Thu); newest on file is 2026-09-30 (gil_screenshot). Free naaim.org table is 3 months delayed; recent weeks exist only if Meisler quotes them.",
-   "severity": "info"
-  },
-  {
-   "flag": "dsi_not_available",
-   "detail": "DSI: not available (paid source). S&P 500: last quoted 63 on Oct 7, 2026 (Meisler column); Nasdaq: last quoted 83 on Oct 7, 2026 (Meisler column).",
    "severity": "info"
   }
  ],
