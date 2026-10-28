@@ -3,17 +3,17 @@
  "model_version": "v2.1",
  "model_version_note": "v2.1 (2026-09-28): adds the ICE BofA MOVE Index to the composite at 10% (breadth weights x0.9); DSI display-only; provenance record per run; completed-sessions rule",
  "run": {
-  "generated_at": "2026-10-27T20:51:40-04:00",
-  "run_stamp": "20261027_2051",
-  "pull_stamp": "20261027_2051",
-  "pull_finished_at": "2026-10-27T20:51:33-04:00"
+  "generated_at": "2026-10-28T09:25:14-04:00",
+  "run_stamp": "20261028_0925",
+  "pull_stamp": "20261028_0924",
+  "pull_finished_at": "2026-10-28T09:25:05-04:00"
  },
- "market_session_date": "2026-10-26",
+ "market_session_date": "2026-10-27",
  "completed_sessions_check": {
-  "evaluated_at": "2026-10-27T20:51:40-04:00",
+  "evaluated_at": "2026-10-28T09:25:14-04:00",
   "last_completed_session": "2026-10-27",
   "rule": "completed sessions only; a trading day counts from 16:30 ET",
-  "reason": "today is complete (after 16:30 ET)",
+  "reason": "before 16:30 ET: today's session is not complete",
   "as_of_ok": true
  },
  "weights": {
@@ -70,55 +70,55 @@
   {
    "input": "NYSE + Nasdaq breadth (adv/dec/unch, up/down volume, new highs/lows): Barron's Market Lab (primary, weekly final)",
    "url": "https://www.barrons.com/market-data/market-lab?date=<Saturday>",
-   "fetched_at": "2026-10-27T20:51:31-04:00",
+   "fetched_at": "2026-10-28T09:25:03-04:00",
    "file": "barrons/parsed.json"
   },
   {
    "input": "NYSE + Nasdaq breadth, latest + previous close: WSJ Markets Diary JSON (fills sessions Barron's has not published yet)",
    "url": "https://www.wsj.com/market-data/stocks/marketsdiary?id=%7B%22application%22%3A%22WSJ%22%2C%22marketsDiaryType%22%3A%22diaries%22%7D&type=mdc_marketsdiary",
-   "fetched_at": "2026-10-27T20:51:11-04:00",
+   "fetched_at": "2026-10-28T09:24:50-04:00",
    "http": "200",
-   "file": "raw/wsj_diaries_20261027_2051.json"
+   "file": "raw/wsj_diaries_20261028_0924.json"
   },
   {
    "input": "NYSE adv/dec/volume, McClellan Oscillator/Summation: McClellan OSC-DATA.xls (gap fill + Summation level alignment)",
    "url": "https://www.mcoscillator.com/data/osc_data/OSC-DATA.xls",
-   "fetched_at": "2026-10-27T20:51:11-04:00",
+   "fetched_at": "2026-10-28T09:24:50-04:00",
    "http": "200",
    "file": "OSC-DATA.xls"
   },
   {
    "input": "Cboe total/equity/index put/call ratios (daily)",
-   "url": "https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-10-26_daily_options",
-   "fetched_at": "2026-10-27T20:51:12-04:00",
-   "file": "pc/2026-10-26.json"
+   "url": "https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-10-27_daily_options",
+   "fetched_at": "2026-10-28T09:24:51-04:00",
+   "file": "pc/2026-10-27.json"
   },
   {
    "input": "Nasdaq Composite closes (Nasdaq Momentum)",
    "url": "https://api.nasdaq.com/api/quote/COMP/historical?assetclass=index",
-   "fetched_at": "2026-10-27T20:51:17-04:00",
+   "fetched_at": "2026-10-28T09:24:57-04:00",
    "http": "200",
    "file": "nq_COMP.json"
   },
   {
    "input": "S&P 500 / VIX / Russell 2000 closes (context, exposure guards)",
    "url": "https://cdn.cboe.com/api/global/delayed_quotes/charts/historical/_SPX.json",
-   "fetched_at": "2026-10-27T20:51:20-04:00",
+   "fetched_at": "2026-10-28T09:24:59-04:00",
    "http": "200",
    "file": "cq_SPX.json"
   },
   {
    "input": "NAAIM Exposure Index (weekly; gate tiebreak only)",
    "url": "https://index.naaim.org/embeddable/table (free table, 3-month delayed) + readings quoted in Meisler columns (naaim_manual.csv)",
-   "fetched_at": "2026-10-27T20:51:32-04:00",
+   "fetched_at": "2026-10-28T09:25:04-04:00",
    "status": "NAAIM: 131 rows fetched, latest official survey 2026-07-22; naaim.csv 141 rows, latest 2026-10-14 (gil_screenshot)",
    "file": "naaim.csv"
   },
   {
    "input": "ICE BofA MOVE Index (scored, composite 10%)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EMOVE (Yahoo Finance ^MOVE); cross-check https://quote.cnbc.com (.MOVE)",
-   "fetched_at": "2026-10-27T20:51:33-04:00",
-   "status": "MOVE: yahoo ok: 273 closes, 0 new, latest 2026-10-27; cnbc cross-check 2026-10-27 97.87 ok",
+   "fetched_at": "2026-10-28T09:25:05-04:00",
+   "status": "MOVE: yahoo ok: 273 closes, 0 new, latest 2026-10-27",
    "file": "move_daily.csv"
   },
   {
@@ -129,42 +129,41 @@
   }
  ],
  "raw_observations": {
-  "session": "2026-10-26",
+  "session": "2026-10-27",
   "breadth_row": {
-   "spx_close": 7676.77,
-   "comp_close": 26169.38,
-   "rut_close": 2786.424,
-   "iwm_close": 276.99,
-   "vix_close": 18.39,
-   "pc_total": 0.86,
-   "pc_equity": 0.6,
-   "pc_index": 0.96,
-   "nyse_adv": 1421,
-   "nyse_dec": 1272,
-   "nyse_unch": 73,
-   "nyse_upvol": 2412230670,
-   "nyse_dnvol": 3337640232,
-   "nyse_nh": 58,
-   "nyse_nl": 158,
-   "nasdaq_adv": 2495,
-   "nasdaq_dec": 2286,
-   "nasdaq_unch": 168,
-   "nasdaq_upvol": 3897875352.0,
-   "nasdaq_dnvol": 3431366033,
-   "nasdaq_nh": 125,
-   "nasdaq_nl": 434,
-   "nyse_upvol_primary": 568651238,
-   "nyse_dnvol_primary": 731239013,
+   "spx_close": 7722.6,
+   "comp_close": 26477.81,
+   "rut_close": 2818.8702,
+   "iwm_close": 280.18,
+   "vix_close": 17.52,
+   "pc_total": 0.93,
+   "pc_equity": 0.59,
+   "pc_index": 1.06,
+   "nyse_adv": 1573,
+   "nyse_dec": 1127,
+   "nyse_unch": 72,
+   "nyse_upvol": 2787862729,
+   "nyse_dnvol": 2339307140,
+   "nyse_nh": 41,
+   "nyse_nl": 108,
+   "nasdaq_adv": 3133,
+   "nasdaq_dec": 1687,
+   "nasdaq_unch": 176,
+   "nasdaq_upvol": 5450377654.0,
+   "nasdaq_dnvol": 2370570036,
+   "nasdaq_nh": 92,
+   "nasdaq_nl": 291,
+   "nyse_upvol_primary": 683056829,
+   "nyse_dnvol_primary": 597668504,
    "src_breadth": "wsj",
-   "move_close": 102.19,
-   "move_close_date": "2026-10-26"
+   "move_close": 97.87,
+   "move_close_date": "2026-10-27"
   },
-  "pc_total_10dma": 0.877
+  "pc_total_10dma": 0.887
  },
  "trailing_arrays": {
   "nyse_net_advances_30": {
    "dates": [
-    "2026-09-15",
     "2026-09-16",
     "2026-09-17",
     "2026-09-18",
@@ -193,10 +192,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    -934,
     -551,
     829,
     -905,
@@ -225,12 +224,12 @@
     18,
     403,
     -711,
-    149
+    149,
+    446
    ]
   },
   "nasdaq_net_advances_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -239,10 +238,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    -1159,
     -2637,
     1543,
     -2316,
@@ -251,12 +250,12 @@
     625,
     -728,
     -1043,
-    209
+    209,
+    1446
    ]
   },
   "nyse_new_highs_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -265,10 +264,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    57,
     48,
     67,
     63,
@@ -277,12 +276,12 @@
     53,
     105,
     63,
-    58
+    58,
+    41
    ]
   },
   "nyse_new_lows_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -291,10 +290,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    179,
     330,
     141,
     102,
@@ -303,12 +302,12 @@
     126,
     136,
     171,
-    158
+    158,
+    108
    ]
   },
   "nasdaq_new_highs_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -317,10 +316,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    71,
     40,
     71,
     64,
@@ -329,12 +328,12 @@
     73,
     98,
     90,
-    125
+    125,
+    92
    ]
   },
   "nasdaq_new_lows_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -343,10 +342,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    508,
     683,
     528,
     434,
@@ -355,12 +354,12 @@
     248,
     439,
     434,
-    434
+    434,
+    291
    ]
   },
   "nyse_upvol_30": {
    "dates": [
-    "2026-09-15",
     "2026-09-16",
     "2026-09-17",
     "2026-09-18",
@@ -389,10 +388,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    1845419000,
     1471732000,
     3358659000,
     2465379000,
@@ -421,12 +420,12 @@
     2246154000,
     3102513000,
     1954021000,
-    2412230670
+    2412230670,
+    2787862729
    ]
   },
   "nyse_dnvol_30": {
    "dates": [
-    "2026-09-15",
     "2026-09-16",
     "2026-09-17",
     "2026-09-18",
@@ -455,10 +454,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    3246162000,
     3714265000,
     1616180000,
     6310155000,
@@ -487,12 +486,12 @@
     2498928000,
     2743084000,
     3046004000,
-    3337640232
+    3337640232,
+    2339307140
    ]
   },
   "comp_close_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -501,10 +500,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    27204.38,
     26692.87,
     26713.03,
     26140.03,
@@ -513,12 +512,12 @@
     26702.86,
     26008.86,
     25955.34,
-    26169.38
+    26169.38,
+    26477.81
    ]
   },
   "pc_total_10": {
    "dates": [
-    "2026-10-13",
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
@@ -527,10 +526,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    0.83,
     0.88,
     0.8,
     0.92,
@@ -539,15 +538,15 @@
     0.87,
     0.94,
     0.93,
-    0.86
+    0.86,
+    0.93
    ]
   },
   "mcclellan_ema19_ema39_last": {
-   "e19": -56.482,
-   "e39": -113.787
+   "e19": -6.234,
+   "e39": -85.797
   },
   "source_by_session_10": {
-   "2026-10-13": "barrons",
    "2026-10-14": "barrons",
    "2026-10-15": "barrons",
    "2026-10-16": "barrons",
@@ -556,17 +555,17 @@
    "2026-10-21": "barrons",
    "2026-10-22": "barrons",
    "2026-10-23": "barrons",
-   "2026-10-26": "wsj"
+   "2026-10-26": "wsj",
+   "2026-10-27": "wsj"
   },
   "move_close_252": {
    "window": 252,
-   "first": "2025-10-22",
-   "last": "2026-10-26",
+   "first": "2025-10-23",
+   "last": "2026-10-27",
    "min": 55.77,
    "max": 115.02,
    "median": 72.43,
    "dates": [
-    "2025-10-22",
     "2025-10-23",
     "2025-10-24",
     "2025-10-27",
@@ -817,10 +816,10 @@
     "2026-10-21",
     "2026-10-22",
     "2026-10-23",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
    ],
    "values": [
-    75.49,
     74.05,
     68.94,
     66.87,
@@ -1071,7 +1070,8 @@
     95.94,
     106.84,
     103.31,
-    102.19
+    102.19,
+    97.87
    ]
   }
  },
@@ -1080,7 +1080,7 @@
    "key": "nyse_obos10",
    "label": "NYSE OB/OS Osc (10d avg net adv)",
    "clock": "ST",
-   "raw": -6.6,
+   "raw": 12.0,
    "formula": "10-day mean of NYSE (adv - dec)",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1113,15 +1113,15 @@
      100
     ]
    ],
-   "score": 49.623,
+   "score": 50.6,
    "composite_weight": 0.36000000000000004,
-   "contribution": 17.864
+   "contribution": 18.216
   },
   {
    "key": "nasdaq_momentum9",
    "label": "Nasdaq Momentum (9-day pts)",
    "clock": "ST",
-   "raw": -1035.0,
+   "raw": -215.06,
    "formula": "Nasdaq Composite close - close 9 sessions earlier",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1154,15 +1154,15 @@
      100
     ]
    ],
-   "score": 29.3,
+   "score": 45.699,
    "composite_weight": 0.09000000000000001,
-   "contribution": 2.637
+   "contribution": 4.113
   },
   {
    "key": "nyse_ad30",
    "label": "30-day avg NYSE net adv",
    "clock": "MT",
-   "raw": -173.8667,
+   "raw": -127.8667,
    "formula": "30-day mean of NYSE (adv - dec)",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1195,15 +1195,15 @@
      100
     ]
    ],
-   "score": 37.348,
+   "score": 41.476,
    "composite_weight": 0.1285714285714286,
-   "contribution": 4.802
+   "contribution": 5.333
   },
   {
    "key": "nyse_net_needed",
    "label": "Summation net A-D needed",
    "clock": "MT",
-   "raw": -1145.2678,
+   "raw": -1517.9382,
    "formula": "19*EMA39 - 18*EMA19 of NYSE net advances (McClellan alphas .05/.10)",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1236,15 +1236,15 @@
      100
     ]
    ],
-   "score": 53.818,
+   "score": 55.06,
    "composite_weight": 0.1285714285714286,
-   "contribution": 6.919
+   "contribution": 7.079
   },
   {
    "key": "BEST_nyse_vi",
    "label": "NYSE Volume Indicator (30d up-vol %, -1.34 bias adj.)",
    "clock": "MT",
-   "raw": 45.9814,
+   "raw": 46.5702,
    "formula": "100 * sum(up vol, 30d) / sum(up+down vol, 30d) - 1.34 bias",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1285,15 +1285,15 @@
      100
     ]
    ],
-   "score": 29.938,
+   "score": 31.901,
    "composite_weight": 0.0642857142857143,
-   "contribution": 1.925
+   "contribution": 2.051
   },
   {
    "key": "BEST_nyse_hilo",
    "label": "Hi-Lo NYSE (10d sum-ratio)",
    "clock": "MT_HL",
-   "raw": 0.274,
+   "raw": 0.2777,
    "formula": "sum(NH,10d) / sum(NH+NL,10d), NYSE",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1326,15 +1326,15 @@
      100
     ]
    ],
-   "score": 43.543,
+   "score": 43.649,
    "composite_weight": 0.0642857142857143,
-   "contribution": 2.799
+   "contribution": 2.806
   },
   {
    "key": "BEST_nasdaq_hilo",
    "label": "Hi-Lo Nasdaq (10d mean of daily ratios)",
    "clock": "MT_HL",
-   "raw": 0.1447,
+   "raw": 0.1564,
    "formula": "10-day mean of daily NH/(NH+NL), Nasdaq",
    "transform": "piecewise-linear interpolation between anchors (value -> score), clipped 0..100",
    "anchors": [
@@ -1367,40 +1367,40 @@
      100
     ]
    ],
-   "score": 32.45,
+   "score": 34.4,
    "composite_weight": 0.0642857142857143,
-   "contribution": 2.086
+   "contribution": 2.211
   },
   {
    "key": "move_score",
    "label": "ICE BofA MOVE Index",
    "clock": "composite only",
-   "raw": 102.19,
-   "raw_date": "2026-10-26",
+   "raw": 97.87,
+   "raw_date": "2026-10-27",
    "formula": "percentile rank of the close among its latest 252 daily closes (inclusive, ties averaged) = pct; score = 100 - pct",
    "transform": "inverted percentile",
-   "percentile_252": 93.651,
-   "score": 6.349,
+   "percentile_252": 89.683,
+   "score": 10.317,
    "composite_weight": 0.1,
-   "contribution": 0.635
+   "contribution": 1.032
   }
  ],
  "sub_scores": {
   "short_term": {
-   "value": 45.558,
+   "value": 49.62,
    "formula": "weighted mean {\"nyse_obos10\": 0.8, \"nasdaq_momentum9\": 0.2}"
   },
   "medium_term": {
-   "value": 41.18,
+   "value": 43.289,
    "formula": "weighted mean {\"nyse_ad30\": 2, \"nyse_net_needed\": 2, \"BEST_nyse_vi\": 1, \"hilo_avg\": 2} (hilo_avg = mean of the two Hi-Lo scores)"
   },
   "composite_breadth_v2_0": {
-   "value": 43.369,
+   "value": 46.454,
    "formula": "0.5*ST + 0.5*MT (v2.0 composite, shown for comparison)"
   },
   "composite": {
-   "value": 39.667,
-   "zone": "Oversold",
+   "value": 42.84,
+   "zone": "Neutral",
    "formula": "0.90*(0.5*ST + 0.5*MT) + 0.10*MOVE score (falls back to breadth-only if MOVE is missing)"
   }
  },
@@ -1417,9 +1417,9 @@
    "naaim_shift": false
   },
   "inputs": {
-   "short_term": 45.6,
-   "medium_term": 41.2,
-   "pc_total_10dma": 0.877,
+   "short_term": 49.6,
+   "medium_term": 43.3,
+   "pc_total_10dma": 0.887,
    "pc_status": "Neutral",
    "naaim": {
     "date": "2026-10-14",
@@ -1436,7 +1436,7 @@
     "prev_value": 77.0,
     "prev_date": "2026-09-30",
     "change_vs_prev": -2.47,
-    "age_days": 12,
+    "age_days": 13,
     "stale": false,
     "fear": false
    },
@@ -1449,11 +1449,11 @@
   }
  },
  "recommended_exposure": {
-  "as_of": "2026-10-26",
-  "exposure": 0.8,
-  "label": "80% invested, 20% cash",
-  "state": "Oversold, not a good oversold",
-  "reason": "Oversold but not a good oversold (sentiment not bearish, 10-day P/C 0.88): bounce likely, retest possible; hold 20% cash to deploy if a good oversold prints (P/C \u2265 .97 with both clocks < 40)",
+  "as_of": "2026-10-27",
+  "exposure": 1.0,
+  "label": "100% invested, no margin",
+  "state": "Neutral",
+  "reason": "Neutral: baseline, fully invested without margin",
   "guard": null
  },
  "naaim_asof": {
@@ -1471,7 +1471,7 @@
   "prev_value": 77.0,
   "prev_date": "2026-09-30",
   "change_vs_prev": -2.47,
-  "age_days": 12,
+  "age_days": 13,
   "stale": false,
   "fear": false
  },
@@ -1483,7 +1483,7 @@
     "current": false,
     "last_value": 58.0,
     "last_date": "2026-10-14",
-    "age_days": 13,
+    "age_days": 14,
     "source": "gil_screenshot",
     "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-14 5:54 PM; image provenance/dsi_2026-10-14_gil_screenshot.jpg"
    },
@@ -1491,7 +1491,7 @@
     "current": false,
     "last_value": 63.0,
     "last_date": "2026-10-14",
-    "age_days": 13,
+    "age_days": 14,
     "source": "gil_screenshot",
     "note": "Gil screenshot of trade-futures.com dsihot.html (Network Press Daily Sentiment Index table), raw % bullish, received 2026-10-14 5:54 PM; image provenance/dsi_2026-10-14_gil_screenshot.jpg"
    }
@@ -1506,13 +1506,14 @@
  },
  "quality_flags": [
   {
-   "flag": "as_of_behind_last_completed_session",
-   "detail": "data as of 2026-10-26; last completed session 2026-10-27 (source not updated yet)",
-   "severity": "warn"
+   "flag": "preliminary_breadth",
+   "session": "2026-10-26",
+   "detail": "breadth from wsj (WSJ/McClellan fill); Barron's weekly final may revise it",
+   "severity": "info"
   },
   {
    "flag": "preliminary_breadth",
-   "session": "2026-10-26",
+   "session": "2026-10-27",
    "detail": "breadth from wsj (WSJ/McClellan fill); Barron's weekly final may revise it",
    "severity": "info"
   },
